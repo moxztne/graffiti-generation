@@ -4,7 +4,7 @@ myHeaders.append("Content-Type", "application/json");
 var raw = JSON.stringify({
   "key": "s48F4w8lCvirhuG06bXCoRE0anNbHABOeYIIUJELmelucaNjN7sqn7JB6b6W",
   "prompt": "graffiti stiker of text 'Hello World', plain background, 4K",
-    "negative_prompt": "((out of frame)), ((human)), (((abstract))), ((missing letters)), ((miss spelling))",
+  "negative_prompt": "((out of frame)), ((human)), (((abstract))), ((missing letters)), ((miss spelling))",
   "width": "512",
   "height": "512",
   "samples": "1",
@@ -28,7 +28,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://stablediffusionapi.com/api/v3/text2img", requestOptions)
+fetch("https://stablediffusionapi.com/api/v3/text2img", { mode: "no-cors" }, requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
